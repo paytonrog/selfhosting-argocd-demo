@@ -1,0 +1,5 @@
+aws_profile        = "TemporalSelfHostingAdmin"
+region             = "us-east-2"
+name_prefix        = "payton-temporal"
+node_instance_type = "c6.large"
+visibility_db_name = "temporal_visibility"
