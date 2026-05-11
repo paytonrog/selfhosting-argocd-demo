@@ -18,7 +18,7 @@ spec:
       containers:
         - name: worker
           image: ghcr.io/paytonrog/temporal-worker-ts:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           envFrom:
             - configMapRef:
                 name: temporal-app-worker-config
