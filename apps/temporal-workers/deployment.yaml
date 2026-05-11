@@ -17,23 +17,23 @@ spec:
       serviceAccountName: temporal-app-worker
       containers:
         - name: worker
-          image: ghcr.io/temporalio/samples-go/worker:latest
+          image: nginx:1.27
           imagePullPolicy: IfNotPresent
           envFrom:
             - configMapRef:
                 name: temporal-app-worker-config
           ports:
-            - containerPort: 8080
+            - containerPort: 80
               name: http
           readinessProbe:
             httpGet:
-              path: /healthz
+              path: /
               port: http
             initialDelaySeconds: 10
             periodSeconds: 10
           livenessProbe:
             httpGet:
-              path: /healthz
+              path: /
               port: http
             initialDelaySeconds: 20
             periodSeconds: 20
