@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: temporal-worker-config
+  name: temporal-app-worker-config
   labels:
-    app.kubernetes.io/name: temporal-worker
+    app.kubernetes.io/name: temporal-app-worker
 data:
   TEMPORAL_ADDRESS: temporal-frontend.temporal.svc.cluster.local:7233
   TEMPORAL_NAMESPACE: default
