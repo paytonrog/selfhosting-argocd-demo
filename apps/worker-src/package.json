@@ -1,0 +1,23 @@
+{
+  "name": "temporal-worker-ts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/worker.js",
+    "dev": "tsx src/worker.ts"
+  },
+  "dependencies": {
+    "@temporalio/client": "^1.11.7",
+    "@temporalio/workflow": "^1.11.7",
+    "@temporalio/worker": "^1.11.7",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.8.7",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}

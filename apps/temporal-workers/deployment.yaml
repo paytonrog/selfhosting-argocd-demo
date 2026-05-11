@@ -17,23 +17,23 @@ spec:
       serviceAccountName: temporal-app-worker
       containers:
         - name: worker
-          image: nginx:1.27
+          image: ghcr.io/paytonrog/temporal-worker-ts:latest
           imagePullPolicy: IfNotPresent
           envFrom:
             - configMapRef:
                 name: temporal-app-worker-config
           ports:
-            - containerPort: 80
+            - containerPort: 8080
               name: http
           readinessProbe:
             httpGet:
-              path: /
+              path: /healthz
               port: http
             initialDelaySeconds: 10
             periodSeconds: 10
           livenessProbe:
             httpGet:
-              path: /
+              path: /healthz
               port: http
             initialDelaySeconds: 20
             periodSeconds: 20
